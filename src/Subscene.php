@@ -355,9 +355,4 @@ class Subscene
 		return $response;
 	}
 }
-$subscene = new Subscene();
-$list_subtitle = $subscene->listSubtitle('fbi-most-wanted-season-one');
-$smart_filter =$subscene->smartFilterSeriesSubtitle($list_subtitle,1,14,'english',['web']);
-$smart_download = $subscene->smartDownloadSeriesSubtitle($smart_filter,__DIR__.'/subtitle');
-$response = json_encode($smart_download,JSON_PRETTY_PRINT);
-file_put_contents('debug.json', $response);
+?>
