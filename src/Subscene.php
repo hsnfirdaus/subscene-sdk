@@ -17,10 +17,6 @@ class Subscene
 		}else{
 			curl_setopt($ch, CURLOPT_URL, $path);
 		}
-		curl_setopt($ch, CURLOPT_PROXY, '83.97.23.90');
-		curl_setopt($ch, CURLOPT_PROXYPORT, '18080');
-		curl_setopt($ch, CURLOPT_PROXYTYPE, 'HTTP');
-		curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		if ($post) {
 			curl_setopt($ch, CURLOPT_POST, 1);
