@@ -1,0 +1,24 @@
+{
+    "name": "hsnfirdaus/subscene-sdk",
+    "description": "A unofficial subscene.com sdk to search, download, and smart filtering subtitle",
+    "keywords": [
+    	"subscene",
+    	"subtitle",
+    	"download subtitle",
+    	"download subscene"
+    ],
+    "type": "library",
+    "license": "Apache-2.0",
+    "autoload": {
+	    "psr-4": {
+	      "Hsnfirdaus\\": "src/"
+	    }
+  	},
+    "authors": [
+        {
+            "name": "Muhammad Hasan Firdaus",
+            "email": "hasanteam008@gmail.com"
+        }
+    ],
+    "require": {}
+}
