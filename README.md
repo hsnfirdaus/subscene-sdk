@@ -222,7 +222,6 @@ echo json_encode($smart_filter,JSON_PRETTY_PRINT);
             "season": "01",
             "episode": "01"
         },
-        //Until last episode
         "14": {
             "id": "2208141",
             "language": {
