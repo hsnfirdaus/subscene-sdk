@@ -22,6 +22,8 @@ class Subscene
 			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
 		}
+		curl_setopt($ch, CURLOPT_COOKIEJAR, __DIR__.'/cookie.txt');
+		curl_setopt($ch, CURLOPT_COOKIEFILE, __DIR__.'/cookie.txt');
 		curl_setopt($ch, CURLOPT_REFERER, static::BASE_URL);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -305,8 +307,8 @@ class Subscene
 	}
 	public function smartDownloadSeriesSubtitle($filter_result,$folder_target=__DIR__.'/../')
 	{
-		if (!is_dir('tmp')) {
-			mkdir('tmp');
+		if (!is_dir(__DIR__.'/tmp')) {
+			mkdir(__DIR__.'/tmp');
 		}
 		if (!is_dir($folder_target)) {
 			mkdir($folder_target);
@@ -322,7 +324,7 @@ class Subscene
 					$name=preg_replace('/[^a-zA-Z0-9]/', '-', strtolower($filter_result['title'])).' - S'.$subtitle_list['season'].'E'.$subtitle_list['episode'].'.srt';
 					$zip = new \ZipArchive;
 					if($zip->open('tmp.zip') === TRUE) {
-					   $zip->extractTo('tmp');
+					   $zip->extractTo(__DIR__.'/tmp');
 					   $zip->close();
 					}
 					foreach (glob(__DIR__.'/tmp/*') as $f) {
